@@ -17,22 +17,22 @@ import com.google.common.collect.Sets;
 
 public class Problem152 {
 
-	private ImmutableList<Long> numbers;
+  private ImmutableList<Long> numbers;
   private ImmutableList<Long> squares;
   private ImmutableList<Long> operands;
   private List<Long> remaining;
   private Long target;
 
   public static void main(String[] args) {
-	  System.out.println(new Problem152().solve());
-	}
+    System.out.println(new Problem152().solve());
+  }
 
   public int solve() {
     numbers = FluentIterable.from(ContiguousSet.create(Range.closed(2L, 80L), longs()))
-	      .filter(new Predicate<Long>() {
-	        @Override public boolean apply(Long n) {
-	          return ImmutableSet.of(2L, 3L, 5L, 7L, 13L).containsAll(primeDivisors(n));
-	        }
+        .filter(new Predicate<Long>() {
+          @Override public boolean apply(Long n) {
+            return ImmutableSet.of(2L, 3L, 5L, 7L, 13L).containsAll(primeDivisors(n));
+          }
         })
         .toList();
     System.out.println(numbers);
@@ -92,9 +92,9 @@ public class Problem152 {
     return result;
   }
 
-	private long gcd(long a, long b) {
-	  return b == 0L ? a : gcd(b, a % b);
-	}
+  private long gcd(long a, long b) {
+    return b == 0L ? a : gcd(b, a % b);
+  }
 
   private Long lcm(Iterable<Long> numbers) {
     long res = 1L;
@@ -104,7 +104,7 @@ public class Problem152 {
     return res;
   }
 
-	private long lcm(long a, long b) {
-	  return a / gcd(a, b) * b;
-	}
+  private long lcm(long a, long b) {
+    return a / gcd(a, b) * b;
+  }
 }
