@@ -10,7 +10,7 @@ import com.google.common.base.Stopwatch;
 public class Problem166v2 {
 
   public static void main(String[] args) {
-    Stopwatch stopwatch = new Stopwatch();
+    Stopwatch stopwatch = Stopwatch.createUnstarted();
     stopwatch.start();
     System.out.println(new Problem166v2().solve());
     System.out.println(stopwatch.elapsed(TimeUnit.MILLISECONDS) + "ms");

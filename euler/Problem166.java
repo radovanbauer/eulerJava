@@ -15,7 +15,7 @@ public class Problem166 {
 
   public long solve() {
     long cnt = 0L;
-    Stopwatch stopwatch = new Stopwatch();
+    Stopwatch stopwatch = Stopwatch.createUnstarted();
     for (int sum = 0; sum <= 4 * 9; sum++) {
       stopwatch.start();
       cnt += solve(new Grid(sum), 0);
